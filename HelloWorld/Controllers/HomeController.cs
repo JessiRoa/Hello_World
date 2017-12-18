@@ -15,23 +15,12 @@ namespace HelloWorld.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Welcome(string name, int numTimes = 1)
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
 
             return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
